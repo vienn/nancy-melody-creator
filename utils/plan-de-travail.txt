@@ -1,30 +1,31 @@
 1. Énoncé
-Phase 1 - Convertisseur de mélodie chanté en midi
-Phase 2 - Convertisseur de mélodie chanté en midi + écoute par l'intermédiaire d'un mini-synth monophonique
+Phase 1 - Convertisseur de mélodie chantée/fredonnée au format midi.
+Phase 2 - Convertisseur de mélodie chantée/fredonnée au format midi + écoute par l'intermédiaire d'un mini-synth monophonique.
 Phase 3 - Générateur de mélodie personnalisée
 
 2. Description
-Phase 1 - Application permettrant de chanter une mélodie au microphone et de convertir cette mélodie en notes midi. Retourne un fichier midi. Système monophonique.
+Phase 1 - Application monophonique permettant de fredonner une mélodie au microphone et de convertir cette mélodie en notes midi. Un nouveau fichier midi sera sauvegardé. 
 Phase 2 - Phase 1 + mini-synth monophonique pour permettre l'écoute du fichier midi enregistré.
-Phase 3 - Générateur de mélodie personnalisé à partie de modèles de mélodie qui ont été enregistrés. Après avoir appris les spécificités des mélodies(nombre minimum à déterminer) et leur points communs, l'algorithme génèrera une mélodie semblable, dans les tons, de celles qui ont été sauvegardées. Les mélodies pourront être écoutés par l'intermédiaire d'un mini-synth monophonique construit par synthèse sonore.
+Phase 3 - Générateur de mélodie personnalisée à partie de modèles de mélodie qui ont été enregistrés. Après avoir appris les spécificités des mélodies(nombre minimum à déterminer) et leur points communs, l'algorithme génèrera une mélodie semblable, dans les tons, de celles qui ont été sauvegardées. Les mélodies pourront être écoutées par l'intermédiaire d'un mini-synth monophonique construit par synthèse sonore.
 
 3. Analyse des besoins
 Phase 1 - Convertisseur de voix au midi
 Interface : bouton "Enregistrement", barre de déroulement de temps d'enregistrement, bouton d'"arrêt", bouton de "Sauvegarde".
 Enregistrement de la voix.
 Sauvegarde d'un fichier audio (en local).
-Analyse du fichier audio et convertion au midi.
+Analyse du fichier audio et convertion au midi (FFT - Hauteur, durée, intensité) + (si possible, association gamme et correction de hauteur, si c'est pas trop compliqué ;)
 Sauvegarde d'un fichier midi, file.mid (en local).
 Phase 2 - Écoute du fichier midi
 Ajouter les composantes suivantes à la première phase du projet:
-Synthétiseur monophonique pour l'écoute du fichier midi généré.
+Synthétiseur monophonique pour l'écoute du fichier midi généré construit par synthèse sonnore.
 Ajout d'un bouton de "sélection" d'un fichier midi et d'un bouton "Play". 
+Lecture du fichier midi.
 Phase 3 - Générateur de mélodie personnalisée
-Ensemble de données (fichiers midi enregistrés)
+Ensemble de données (fichiers midi enregistrés ou téléversés)
 Système d'apprentissage
 Génération d'une mélodie en fichier midi.
 Ajout à l'interface d'un bouton "générer mélodie".
-La mélodie peut-être écouté par l'intermédiare du mini-synth.
+La mélodie peut-être écoutée par l'intermédiare du mini-synth.
 
 4.Acquisition de connaissances (premier jet)
 Phase 1 - voir les exemples de convertisseurs voix/midi qui existent déjà :
@@ -35,20 +36,22 @@ https://www.ofoct.com/
 https://www.bearaudiotool.com/mp3-to-midi
 http://www.pluto.dti.ne.jp/~araki/amazingmidi/
 https://github.com/justinsalamon/audio_to_midi_melodia
+Recherche sur la correction de hauteur (pitch tuning) et l'association à une gamme.
 Phase 2 
 Phase 3
 
 5. Modèle (une première ébauche)
 Phase 1
-Une fois le fichier audio enregistré, le programme, grâce à FFT, analaysera le fichier.
-Le programme détectera le moment où la note commence et finie (durée), détection de la hauteur,
-ainsi que le tempo. Les informations seront sauvegardées en midi dans un fichier midi.
+Une fois le fichier audio enregistré, le programme, grâce à FFT, analaysera le fichier audio.
+Le programme détectera le moment où la note commence et finie (durée), détection de la hauteur, l'intensité
+ainsi que le tempo. *(Si tout va bien... ajouter le pitch tuning et l'association a une gamme). Après l'analyse, les infos seront converties en midi et sauvegardées dans un fichier midi.
 Phase 2 
 Phase 3
 
 6. Méthodes (une première ébauche)
 Phase 1
-Développer une classe de Enregistrement, pour enregistrer et sauvegarder un fichier mélodie audio. Format de sauvegarde à déterminier.
+Développer une classe d'Enregistrement, pour enregistrer et sauvegarder un fichier mélodie audio. Format de sauvegarde à déterminier.
 Développer une classe d'Analayse du fichier audio et sauvegarder du dernier dans un fichier midi.
+* Développer une classe Pitch Tuning/Scale.
 Phase 2 
 Phase 3
