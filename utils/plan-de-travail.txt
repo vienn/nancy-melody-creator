@@ -55,3 +55,15 @@ Développer une classe d'Analayse du fichier audio et sauvegarder du dernier dan
 * Développer une classe Pitch Tuning/Scale.
 Phase 2 
 Phase 3
+
+
+############ Commentaires ##############
+
+Excellent projet! 
+
+Il y a des objets pour analyser la fréquence fondamentale d'un son monophonique dans puredata, fiddle~, sigmund~ ou la librairie aubio.
+
+mrpeach/midifile sera probablement utile!
+
+10/10
+
