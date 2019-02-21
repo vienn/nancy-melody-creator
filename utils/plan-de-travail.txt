@@ -51,7 +51,7 @@ Phase 3
 6. Méthodes (une première ébauche)
 Phase 1
 Développer une classe d'Enregistrement, pour enregistrer et sauvegarder un fichier mélodie audio. Format de sauvegarde à déterminier.
-Développer une classe d'Analayse du fichier audio et sauvegarder du dernier dans un fichier midi.
+Développer une classe d'Analyse du fichier audio et sauvegarder du dernier dans un fichier midi.
 * Développer une classe Pitch Tuning/Scale.
 Phase 2 
 Phase 3
